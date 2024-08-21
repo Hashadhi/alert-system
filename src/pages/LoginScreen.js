@@ -10,6 +10,7 @@ import {
   Button,
   Typography,
   Link,
+  styled,
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
@@ -22,12 +23,11 @@ const LoginScreen = () => {
     fontSize: "20px",
   };
   const avatarStyle = { backgroundColor: "#1bbd7e" };
-  const btnstyle = {
-    margin: "8px 0",
-  };
-  const typoStyle = {
-    marginTop: "20px",
-  };
+  const btnstyle = { margin: "8px 0" };
+  const Tabs = styled(Typography)`
+    margin: 12px 0 auto;
+    font-size: 14px;
+  `;
 
   return (
     <Grid style={{ position: "relative" }}>
@@ -70,14 +70,12 @@ const LoginScreen = () => {
         >
           Sign in
         </Button>
-        <div style={typoStyle}>
-          <Typography>
-            <Link href="#">Forgot password ?</Link>
-          </Typography>
-          <Typography className="signup">
-            Do you have an account ?<Link href="#"> Sign up</Link>
-          </Typography>
-        </div>
+        <Tabs>
+          <Link href="#">Forgot password ?</Link>
+        </Tabs>
+        <Tabs className="signup">
+          Do you have an account ?<Link href="#"> Sign up</Link>
+        </Tabs>
       </Paper>
     </Grid>
   );
