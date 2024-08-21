@@ -13,19 +13,24 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
-const Login = () => {
+const LoginScreen = () => {
   const paperStyle = {
     padding: 20,
-    height: "70vh",
-    width: 280,
-    margin: "20px auto",
+    height: "68vh",
+    width: 380,
+    margin: "80px auto",
+    fontSize: "20px",
   };
   const avatarStyle = { backgroundColor: "#1bbd7e" };
   const btnstyle = {
     margin: "8px 0",
   };
+  const typoStyle = {
+    marginTop: "20px",
+  };
+
   return (
-    <Grid>
+    <Grid style={{ position: "relative" }}>
       <Paper elevation={10} style={paperStyle}>
         <Grid align="center">
           <Avatar style={avatarStyle}>
@@ -34,6 +39,7 @@ const Login = () => {
           <h2>Sign in</h2>
         </Grid>
         <TextField
+          className="textfield"
           id="username"
           label="Username"
           variant="standard"
@@ -41,6 +47,7 @@ const Login = () => {
           required
         />
         <TextField
+          className="textfield"
           id="password"
           label="Password"
           variant="standard"
@@ -49,10 +56,12 @@ const Login = () => {
           required
         />
         <FormControlLabel
+          className="form-control-lable"
           control={<Checkbox name="checkedB" color="primary" />}
           label="Remember me"
         />
         <Button
+          className="btn"
           type="submit"
           color="primary"
           variant="contained"
@@ -61,15 +70,17 @@ const Login = () => {
         >
           Sign in
         </Button>
-        <Typography>
-          <Link href="#">Forgot password ?</Link>
-        </Typography>
-        <Typography>
-          Do you have an account ?<Link href="#">Sign up</Link>
-        </Typography>
+        <div style={typoStyle}>
+          <Typography>
+            <Link href="#">Forgot password ?</Link>
+          </Typography>
+          <Typography className="signup">
+            Do you have an account ?<Link href="#"> Sign up</Link>
+          </Typography>
+        </div>
       </Paper>
     </Grid>
   );
 };
 
-export default Login;
+export default LoginScreen;
