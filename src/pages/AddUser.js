@@ -8,7 +8,7 @@ import {
   Button,
   styled,
 } from "@mui/material";
-import React from "react";
+im;
 
 const Container = styled(FormGroup)`
   width: 50%;
@@ -33,6 +33,8 @@ const AddUser = () => {
     console.log(user);
   };
 
+  const addUserDetails = () => {};
+
   return (
     <Container>
       <Typography variant="h4">Add User</Typography>
@@ -42,18 +44,20 @@ const AddUser = () => {
       </FormControl>
       <FormControl>
         <InputLabel>Last Name</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} />
+        <Input onChange={(e) => onValueChange(e)} name="lastname" />
       </FormControl>
       <FormControl>
         <InputLabel>Email</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} />
+        <Input onChange={(e) => onValueChange(e)} name="email" />
       </FormControl>
       <FormControl>
         <InputLabel>Contact</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} />
+        <Input onChange={(e) => onValueChange(e)} name="phone" />
       </FormControl>
       <FormControl>
-        <Button variant="contained">Add User</Button>
+        <Button onClick={() => addUserDetails()} variant="contained">
+          Add User
+        </Button>
       </FormControl>
     </Container>
   );
